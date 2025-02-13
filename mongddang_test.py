@@ -22,6 +22,12 @@ import sys
 
 # slack
 # 다 삭제함
+options = Options()
+options.add_argument("--headless")  # AWS에서는 보통 headless 모드 필요
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+options.add_argument("--user-data-dir=/tmp/chrome-user-data")  # 고유한 데이터 디렉토리 설정
+
 
 start_time = time.time()
 mongddang_list= []
@@ -53,7 +59,7 @@ chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64
 service=ChromeService(ChromeDriverManager().install())
 mongddang_list= []
 start_time = time.time()
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
 today = str(datetime.today())[:10]
 today_year = today.split("-")[0]
 last_day_of_month = calendar.monthrange(int(today.split("-")[0]), 12)[1]
