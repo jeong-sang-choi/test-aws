@@ -75,7 +75,7 @@ for url in url_num_list:
         title = driver.find_element(By.XPATH,"//*[@id='frm']/div/div[1]/div[2]/div[1]/strong").text
         title = title[:-2].strip() if title.endswith("안내") else title
         detail_link = driver.find_element(By.CSS_SELECTOR, "div.btn-group a").get_attribute('href')
-        print(detail_link)
+        
 
         if detail_link == "https://youth.seoul.go.kr/infoData/sprtInfo/www.jbedu.or.kr":
             detail_link = "https://www.jbedu.or.kr"
@@ -311,7 +311,7 @@ convert_my_wello_df = convert_my_wello_df.replace({np.nan: None})
 print(f"Number of columns: {len(convert_my_wello_df.columns)}")  # Should match the number of columns in the table
 
 # Database connection
-host = "localhost"
+host = "127.0.0.1"
 user = "root"
 password = "0000"
 database = "wello_data"
