@@ -311,7 +311,7 @@ convert_my_wello_df = convert_my_wello_df.replace({np.nan: None})
 print(f"Number of columns: {len(convert_my_wello_df.columns)}")  # Should match the number of columns in the table
 
 # Database connection
-host = "127.0.0.1"
+host = "123.108.174.13/32"
 user = "root"
 password = "0000"
 database = "wello_data"
