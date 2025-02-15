@@ -18,6 +18,7 @@ import pymysql
 import uuid
 import numpy as np
 import sys
+import shutil
 
 
 # slack
@@ -57,6 +58,7 @@ chrome_options.add_argument('--window-size=1920,1080')
 chrome_options.add_argument("--headless")
 chrome_options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36")
 service=ChromeService(ChromeDriverManager().install())
+print(service.path)
 mongddang_list= []
 start_time = time.time()
 driver = webdriver.Chrome(options=options)
@@ -73,6 +75,7 @@ for url in url_num_list:
         title = driver.find_element(By.XPATH,"//*[@id='frm']/div/div[1]/div[2]/div[1]/strong").text
         title = title[:-2].strip() if title.endswith("안내") else title
         detail_link = driver.find_element(By.CSS_SELECTOR, "div.btn-group a").get_attribute('href')
+        print(detail_link)
 
         if detail_link == "https://youth.seoul.go.kr/infoData/sprtInfo/www.jbedu.or.kr":
             detail_link = "https://www.jbedu.or.kr"
