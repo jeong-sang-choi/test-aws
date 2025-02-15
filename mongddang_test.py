@@ -313,7 +313,7 @@ print(f"Number of columns: {len(convert_my_wello_df.columns)}")  # Should match 
 # Database connection
 host = "127.0.0.1"
 user = "root"
-password = "0000"
+password = "Toptop^^12"
 database = "wello_data"
 
 connection = pymysql.connect(
