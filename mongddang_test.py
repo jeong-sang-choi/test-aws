@@ -310,11 +310,18 @@ convert_my_wello_df = convert_my_wello_df.replace({np.nan: None})
 # Verify the number of columns
 print(f"Number of columns: {len(convert_my_wello_df.columns)}")  # Should match the number of columns in the table
 
-# Database connection
-host = "127.0.0.1"
+# local Database connection
+# host = "127.0.0.1"
+# user = "root"
+# password = "Toptop^^12"
+# database = "wello_data"
+
+# aws Database connection
+host = "15.164.3.44"
 user = "root"
-password = "Toptop^^12"
+password = "0000"
 database = "wello_data"
+
 
 connection = pymysql.connect(
     host=host,
